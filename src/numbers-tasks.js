@@ -7,16 +7,50 @@
  *                                                                                           *
  ******************************************************************************************* */
 
+/**
+ * Returns an area of a rectangle given by width and height.
+ *
+ * @param {number} width
+ * @param {number} height
+ * @return {number}
+ *
+ * @example:
+ *   5, 10 => 50
+ *   5, 5  => 25
+ */
 function getRectangleArea(width, height) {
   const area = width * height;
   return area;
 }
 
+/**
+ * Returns a circumference of circle given by radius.
+ *
+ * @param {number} radius
+ * @return {number}
+ *
+ * @example:
+ *   5    => 31.41592653589793
+ *   3.14 => 19.729201864543903
+ *   0    => 0
+ */
 function getCircleCircumference(radius) {
   const circumference = Math.PI * radius * 2;
   return circumference;
 }
 
+/**
+ * Returns an average of two given numbers.
+ *
+ * @param {number} value1
+ * @param {number} value2
+ * @return {number}
+ *
+ * @example:
+ *   5, 5  => 5
+ *  10, 0  => 5
+ *  -3, 3  => 0
+ */
 function getAverage(value1, value2) {
   const average = value1 / 2 + value2 / 2;
   return average;
@@ -54,8 +88,9 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  const x = -b / a;
+  return x;
 }
 
 /**
@@ -75,8 +110,13 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const dotProduct = x1 * x2 + y1 * y2;
+  const vectorLength1 = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const vectorLength2 = Math.sqrt(x2 ** 2 + y2 ** 2);
+  const cos = dotProduct / (vectorLength1 * vectorLength2);
+  const angle = Math.acos(cos);
+  return angle;
 }
 
 /**
